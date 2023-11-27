@@ -1,0 +1,347 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    height: 100%;
+    width: 100%;
+    font-size: 1.4rem;
+    text-rendering: optimizeLegibility;
+    text-decoration: none;
+}
+
+html,
+body a {
+    text-decoration: none;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+    -moz-appearance: textfield;
+}
+
+.mein {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
+    .heading {
+        font-family: Arial, Helvetica, sans-serif;
+        font-weight: bold;
+        margin-bottom: 50px;
+        letter-spacing: 5.5px;
+        text-shadow: 0px 0px 2px black;
+        text-align: center;
+
+        .headingBottomtext {
+            font-size: 15px;
+        }
+    }
+
+    #settingsContainer {
+        width: 550px;
+        height: 60px;
+        border: 1px solid;
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        position: relative;
+        margin-bottom: 10px;
+
+        .partone {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        #TotalNumber {
+            width: 80px;
+            height: 40px;
+            text-indent: 10px;
+            outline: none;
+            border: 1px solid rgb(19, 169, 192);
+            border-top-left-radius: 5px;
+            border-bottom-left-radius: 5px;
+            margin-left: 20px;
+            font-family: Arial, Helvetica, sans-serif;
+            font-weight: bold;
+            letter-spacing: 1.2px;
+        }
+
+        #enter {
+            width: 100px;
+            height: 40px;
+            border: none;
+            border-top-right-radius: 5px;
+            border-bottom-right-radius: 5px;
+            cursor: pointer;
+            font-family: Arial, Helvetica, sans-serif;
+            font-weight: bold;
+            background-color: #04aa6d;
+            color: #fff;
+            font-size: 15px;
+        }
+
+        #timer-box {
+            width: 170px;
+            height: 40px;
+            border: 1px solid;
+
+            border-radius: 5px;
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            font-family: roboto;
+            font-size: 15px;
+            letter-spacing: 1.5px;
+
+            #timer {
+                width: 100px;
+                height: 30px;
+                border-radius: 5px;
+                background-color: #2e3e26;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                color: #fff;
+                gap: 5px;
+            }
+        }
+
+        #resetBtn {
+            width: 100px;
+            height: 40px;
+            background-color: #d73445;
+            border-radius: 5px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: roboto;
+            font-weight: bold;
+            font-size: 15px;
+            color: #fff;
+            cursor: pointer;
+            transition: all .4s linear;
+            transform-origin: left;
+        }
+
+        #resetBtn:active {
+            background-color: #ec939c;
+        }
+    }
+
+    .mein-box {
+        width: 550px;
+        min-height: 200px;
+        border-radius: 5px;
+        border: 1px solid;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 10px;
+        padding: 15px;
+        overflow: hidden;
+        font-size: 10px;
+        position: relative;
+        transition: all .2s linear;
+
+        .inner {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            padding: 20px;
+        }
+
+        .mein-box-heading {
+            font-size: 15px;
+            font-family: Arial, Helvetica, sans-serif;
+            font-weight: bold;
+        }
+
+        .mein-box-sub-heading {
+            margin-top: 10px;
+            font-family: Arial, Helvetica, sans-serif;
+            font-weight: 600;
+            font-size: 13px;
+        }
+
+        .ol {
+            margin-top: 20px;
+            font-family: roboto;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            font-size: 11px;
+            list-style: none;
+            color: #705a5c;
+        }
+
+        .box {
+            width: 30px;
+            height: 30px;
+            border: 1px solid;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all .4s linear;
+            opacity: 0;
+            flex-shrink: 1;
+            transform: scale(0);
+            -webkit-transform: scale(0);
+            -moz-transform: scale(0);
+            -ms-transform: scale(0);
+            -o-transform: scale(0);
+            transform-origin: top;
+            
+        }
+        
+        .congrats-heading {
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        .time-taken {
+            margin-top: 10px;
+            font-size: 12px;
+            font-family: roboto;
+            font-weight: 100;
+            letter-spacing: 1.3px;
+        }
+    }
+
+    .congratulations {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        display: none;
+        pointer-events: none;
+    }
+}
+
+
+
+@media only screen and (max-width: 600px) {
+    .mein {
+        width: 100%;
+        height: auto;
+        display: flex;
+        align-items: center;
+        justify-content: start;
+        flex-direction: column;
+        overflow: hidden;
+    }
+
+    .heading {
+        font-family: Arial, Helvetica, sans-serif;
+        font-weight: bold;
+        margin-bottom: 50px;
+        letter-spacing: 5.5px;
+        text-shadow: 0px 0px 2px black;
+        text-align: center;
+        font-size: 35px;
+        margin-top: 30px;
+
+    }
+
+    .headingBottomtext {
+        font-size: 15px !important;
+        color: #3d3334;
+        letter-spacing: 1px;
+
+    }
+
+    #settingsContainer {
+        width: 550px;
+        height: 200px !important;
+        flex-direction: column;
+        overflow: hidden;
+        margin-top: -40px;
+        border: none !important;
+
+        #TotalNumber {
+            width: 200px !important;
+            height: 40px;
+            text-indent: 10px;
+
+        }
+
+        #enter {
+            width: 100px;
+            height: 40px;
+            border: none;
+            background-color: #04aa6d;
+            color: #fff;
+            font-size: 15px;
+        }
+
+        #timer-box {
+            margin-top: -25px;
+        }
+
+        #resetBtn {
+            width: 100px;
+            height: 40px;
+            background-color: #d73445;
+            margin-top: -25px;
+
+        }
+    }
+
+
+
+    .mein-box {
+        width: 400px !important;
+        min-height: 300px !important;
+        border-radius: 5px;
+        margin-bottom: 50px !important;
+        border: 1px solid;
+        display: flex;
+        align-items: start !important;
+        /* justify-content: start !important; */
+        flex-wrap: wrap;
+        gap: 15px !important;
+        padding: 15px !important;
+        overflow: hidden;
+        font-size: 10px;
+        position: relative;
+        transition: all .2s linear;
+
+        .inner {
+            width: 100% !important;
+            height: 100%;
+            position: relative !important;
+            padding: 30px !important;
+        }
+
+        .mein-box-heading {
+            font-size: 15px !important;
+            font-family: Arial, Helvetica, sans-serif;
+            font-weight: bold;
+        }
+
+        .congrats-heading {
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 20px;
+            font-weight: bold;
+            text-align: center;
+        }
+    }
+
+}

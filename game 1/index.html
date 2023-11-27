@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Number Game</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="mein">
+        <h1 class="heading">Simple Number Finding Game <br> <span class="headingBottomtext">( Explore The 0-100 Number
+                Challenge )</span></h1>
+        <div id="settingsContainer"> <div class="partone"><input type="number" name="" id="TotalNumber" placeholder="Number"><button
+                id="enter">Start Game</button></div>
+            <div id="timer-box">Timer <div id="timer">
+                    <div id="min">0</div><span>M</span> : <div id="sec">0</div> <span>S</span>
+                </div>
+            </div>
+            <div id="resetBtn">Reset</div>
+        </div>
+        <div class="mein-box">
+            <div class="inner">
+                <div class="mein-box-heading">Welcome to the Number Finding Game! Can you find all the numbers from 0 to
+                    your given value ?</div>
+                <div class="mein-box-sub-heading">Here's how to play:</div>
+                <ol class="ol">
+                    <li>Enter a number (not greater than 100) and click "Start Game".</li>
+                    <li>Boxes with random numbers will appear. Your goal is to find and click them in order.</li>
+                    <li>If you click the correct number, the box turns green. If not, it turns red.</li>
+                    <li>Try to find all numbers as quickly as possible!</li>
+                </ol>
+            </div>
+
+        </div>
+        <img  class="congratulations" src="confetti-17.gif" alt="">
+
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"
+        integrity="sha512-16esztaSRplJROstbIIdwX3N97V1+pZvV33ABoG1H2OyTttBxEGkTsoIVsiP1iaTtM8b3+hu2kB6pQ4Clr5yug=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="app.js"></script>
+</body>
+
+</html>
