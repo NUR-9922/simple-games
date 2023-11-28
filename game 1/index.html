@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Simple Number Game</title>
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 
@@ -12,13 +13,16 @@
     <div class="mein">
         <h1 class="heading">Simple Number Finding Game <br> <span class="headingBottomtext">( Explore The 0-100 Number
                 Challenge )</span></h1>
-        <div id="settingsContainer"> <div class="partone"><input type="number" name="" id="TotalNumber" placeholder="Number"><button
-                id="enter">Start Game</button></div>
+        <div id="settingsContainer">
+            <div class="partone"><input type="number" name="" id="TotalNumber" placeholder="Number"><button
+                    id="enter">Start Game</button></div>
             <div id="timer-box">Timer <div id="timer">
                     <div id="min">0</div><span>M</span> : <div id="sec">0</div> <span>S</span>
                 </div>
             </div>
-            <div id="resetBtn">Reset</div>
+
+            <div id="reverse">Reverse Number</div>
+            <div id="resetBtn">Reset &nbsp;<i class="ri-refresh-line"></i></div>
         </div>
         <div class="mein-box">
             <div class="inner">
@@ -34,7 +38,34 @@
             </div>
 
         </div>
-        <img  class="congratulations" src="confetti-17.gif" alt="">
+        <div class="PreviseGameDetaBtn">Previse Game Deta</div>
+        <div class="PreviseGameDeta">
+            <div id="closeBtn"><i class="ri-close-circle-line"></i></div>
+            <div class="container" id="PreviseGameDetaContainer">
+                <div class="header header">
+                    <div class="dateHeader">Date</div>
+                    <div class="numberHeader">Total number</div>
+                    <div class="TakenTimeHeader">Time taken</div>
+                    <div class="WrongClickHeader">Wrong clicks</div>
+                </div>
+                <div class="boxes">
+                </div>
+
+
+            </div>
+            <div class="mobileContainer">
+                <div class="mobileHeader">
+                    <div class="dateHeader">Date</div>
+                    <div class="numberHeader">Total number</div>
+                    <div class="TakenTimeHeader">Time taken</div>
+                    <div class="WrongClickHeader">Wrong clicks</div>
+                </div>
+                <div class="boxes">
+                    
+                </div>
+            </div>
+        </div>
+        <img class="congratulations" src="confetti-17.gif" alt="">
 
     </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"

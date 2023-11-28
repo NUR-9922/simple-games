@@ -29,18 +29,23 @@ input[type=number] {
     -moz-appearance: textfield;
 }
 
+::-webkit-scrollbar {
+    display: none;
+}
+
 .mein {
     width: 100%;
-    height: 100vh;
+    min-height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
+    overflow: hidden;
 
     .heading {
         font-family: Arial, Helvetica, sans-serif;
         font-weight: bold;
-        margin-bottom: 50px;
+        margin-bottom: 20px;
         letter-spacing: 5.5px;
         text-shadow: 0px 0px 2px black;
         text-align: center;
@@ -52,13 +57,14 @@ input[type=number] {
 
     #settingsContainer {
         width: 550px;
-        height: 60px;
+        height: 120px;
         border: 1px solid;
         display: flex;
         align-items: center;
         justify-content: space-around;
         position: relative;
         margin-bottom: 10px;
+        flex-wrap: wrap;
 
         .partone {
             display: flex;
@@ -74,7 +80,7 @@ input[type=number] {
             border: 1px solid rgb(19, 169, 192);
             border-top-left-radius: 5px;
             border-bottom-left-radius: 5px;
-            margin-left: 20px;
+
             font-family: Arial, Helvetica, sans-serif;
             font-weight: bold;
             letter-spacing: 1.2px;
@@ -140,6 +146,18 @@ input[type=number] {
         #resetBtn:active {
             background-color: #ec939c;
         }
+
+        #reverse {
+            padding: 10px 20px;
+            background-color: #04aa6d;
+            border-radius: 5px;
+            font-size: 15px;
+            font-family: Arial, Helvetica, sans-serif;
+            color: #fff;
+            cursor: pointer;
+            pointer-events: none;
+            font-weight: bold;
+        }
     }
 
     .mein-box {
@@ -157,6 +175,7 @@ input[type=number] {
         font-size: 10px;
         position: relative;
         transition: all .2s linear;
+
 
         .inner {
             width: 100%;
@@ -208,13 +227,14 @@ input[type=number] {
             -ms-transform: scale(0);
             -o-transform: scale(0);
             transform-origin: top;
-            
+
         }
-        
+
         .congrats-heading {
             font-family: Arial, Helvetica, sans-serif;
             font-size: 20px;
             font-weight: bold;
+
         }
 
         .time-taken {
@@ -226,6 +246,169 @@ input[type=number] {
         }
     }
 
+    .PreviseGameDetaBtn {
+        padding: 10px 30px;
+        font-size: 15px;
+        font-family: roboto;
+        background-color: transparent;
+        transition: all .4s linear;
+        border: 1px solid #04aa6d;
+        border-radius: 50px;
+        cursor: pointer;
+        -webkit-border-radius: 50px;
+        -moz-border-radius: 50px;
+        -ms-border-radius: 50px;
+        -o-border-radius: 50px;
+        margin-top: 10px;
+        margin-bottom: 50px;
+        font-weight: 1000;
+        letter-spacing: 1.4px;
+
+    }
+
+    .PreviseGameDetaBtn:hover {
+        background-color: #04aa6d;
+        color: #ffff;
+    }
+
+    .PreviseGameDeta {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        background-color: #ffffff;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: all .2s linear;
+
+        display: none;
+
+        #closeBtn {
+            position: absolute;
+            top: 10px;
+            right: 20px;
+            cursor: pointer;
+            transition: all .1s linear;
+            -webkit-transition: all .1s linear;
+            -moz-transition: all .1s linear;
+            -ms-transition: all .1s linear;
+            -o-transition: all .1s linear;
+            background-color: #d73445;
+            color: #fff;
+            font-size: 17px;
+            padding: 5px 15px;
+            border-radius: 5px;
+            -webkit-border-radius: 5px;
+            -moz-border-radius: 5px;
+            -ms-border-radius: 5px;
+            -o-border-radius: 5px;
+            border: none;
+        }
+
+        #closeBtn:hover {
+            transform: scale(1.1);
+            -webkit-transform: scale(1.1);
+            -moz-transform: scale(1.1);
+            -ms-transform: scale(1.1);
+            -o-transform: scale(1.1);
+        }
+
+
+        .container {
+            width: 70%;
+            min-height: 500px;
+            box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+            border-radius: 5px;
+            overflow: hidden;
+            text-transform: capitalize;
+
+
+            .header {
+                width: 100%;
+                height: 50px;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+
+                padding-inline: 20px;
+                font-family: roboto;
+                font-size: 13px;
+                background-color: #6e7bd7;
+                border: none;
+                color: #ffffffe0;
+                letter-spacing: 1.4px;
+                font-weight: bold;
+                flex-wrap: wrap;
+
+                .dateHeader {
+                    width: 100px;
+
+                }
+
+                .numberHeader {
+                    width: 100px;
+
+                }
+
+                .TakenTimeHeader {
+                    width: 100px;
+
+                }
+
+                .WrongClickHeader {
+                    width: 100px;
+
+                }
+            }
+
+            .row {
+                width: 100%;
+                height: 50px;
+                border-bottom: 1px solid #b6969888;
+                display: flex;
+                align-items: center;
+                padding-inline: 20px;
+                font-family: roboto;
+                font-size: 10px;
+                color: #705a5c;
+                letter-spacing: 1.4px;
+                font-weight: bold;
+                justify-content: space-between;
+
+                .dateData {
+                    width: 100px;
+
+                }
+
+                .numberData {
+                    width: 100px;
+
+                    margin-left: 55px;
+                }
+
+                .TakenTimeData {
+                    width: 150px;
+
+                    margin-left: 50px;
+                }
+
+                .WrongClickData {
+                    width: 100px;
+
+                }
+            }
+
+
+        }
+    }
+
+
+    .TakenTime {
+        background-color: #04aa6d;
+    }
+
+
+
     .congratulations {
         position: absolute;
         width: 100%;
@@ -236,7 +419,12 @@ input[type=number] {
 }
 
 
-
+@media only screen and (max-width: 1200px) {
+    .mobileContainer {
+        width: 100%;
+        display: none;
+    }
+}
 @media only screen and (max-width: 600px) {
     .mein {
         width: 100%;
@@ -269,10 +457,10 @@ input[type=number] {
 
     #settingsContainer {
         width: 550px;
-        height: 200px !important;
+        min-height: 200px !important;
         flex-direction: column;
         overflow: hidden;
-        margin-top: -40px;
+        margin-top: 0px;
         border: none !important;
 
         #TotalNumber {
@@ -291,24 +479,17 @@ input[type=number] {
             font-size: 15px;
         }
 
-        #timer-box {
-            margin-top: -25px;
-        }
 
-        #resetBtn {
-            width: 100px;
-            height: 40px;
-            background-color: #d73445;
-            margin-top: -25px;
 
-        }
+
+
     }
 
 
 
     .mein-box {
         width: 400px !important;
-        min-height: 300px !important;
+        height: auto !important;
         border-radius: 5px;
         margin-bottom: 50px !important;
         border: 1px solid;
@@ -341,6 +522,81 @@ input[type=number] {
             font-size: 20px;
             font-weight: bold;
             text-align: center;
+        }
+    }
+
+
+
+
+    .container {
+        display: none;
+    }
+
+    .PreviseGameDeta {
+        align-items: start !important;
+
+
+    }
+
+    .mobileContainer {
+        width: 100%;
+        display: block;
+    }
+
+    .mobileHeader {
+        background-color: #6e7bd7;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+        height: 60px;
+        font-size: 12px;
+        padding-inline: 10px;
+        color: #ffffffe0;
+        margin-top: 50px;
+        font-family: roboto;
+        font-size: 13px;
+        background-color: #6e7bd7;
+        border: none;
+        color: #ffffffe0;
+        letter-spacing: 1.4px;
+        font-weight: bold;
+        flex-wrap: wrap;
+
+    }
+
+    .boxes {
+        color: #000;
+        font-size: 10px;
+        .row{
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px;
+            text-align: center;
+        }
+        .dateData {
+            width: 0px !important;
+
+        }
+
+        .numberData {
+            width: 0px !important;
+            
+            margin-left: 50px;
+        }
+
+        .TakenTimeData {
+            width: auto ;
+             font-size: 10px ;
+
+            margin-left: 30px;
+        }
+
+        .WrongClickData {
+            width: 0px !important;
+            margin-right: 50px;
         }
     }
 
