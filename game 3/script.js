@@ -22,8 +22,6 @@ boxes.forEach((el, i) => {
 function checkWinner() {
   for (const combo of winningCombinations) {
     const [a, b, c] = combo;
- 
-    console.log(a);
     if (boxes[a].textContent === arr[0] && boxes[b].textContent === arr[0] && boxes[c].textContent === arr[0]) {
       crose++
       updateScores();
