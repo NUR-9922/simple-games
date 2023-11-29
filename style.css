@@ -31,7 +31,7 @@ body a {
 
 nav {
     width: 100%;
-    height: 70px;
+    height: 100px;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -68,16 +68,18 @@ ul li a {
     color: #fff;
 }
 
-.git{
+.git {
     padding: 10px 20px;
     background-color: #04aa6d;
     border-radius: 5px;
 }
-.git2{
+
+.git2 {
     padding: 10px 20px;
     background-color: #04aa6d;
     border-radius: 5px;
 }
+
 .mein-container {
     width: 100%;
     height: 90%;
@@ -136,7 +138,7 @@ ul li a {
             background-color: #63606066;
             backdrop-filter: blur(2px);
             -webkit-backdrop-filter: blur(5px);
-            opacity: 0; 
+            opacity: 0;
             transition: all .2s linear;
             -webkit-transition: all .2s linear;
             -moz-transition: all .2s linear;
@@ -176,4 +178,55 @@ ul li a {
 
 
     }
+}
+
+
+@media only screen and (max-width: 600px) {
+    nav {
+        width: 100%;
+        height: 80px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding-inline: 20px;
+        background-color: #2952be;
+        color: #fff;
+        .logo{
+            font-size: 20px;
+            width: 290px;
+            height: 100%;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+        }
+
+    }
+
+ul {
+    margin-left: 0px;
+    width: 300px;
+    gap: 5px;
+    justify-content: space-between;
+   
+}
+ul li{
+    font-size: 10px;
+}
+
+.git {
+    padding: 10px;
+    background-color: #04aa6d;
+    border-radius: 5px;
+}
+
+.git2 {
+    padding: 10px 10px;
+    background-color: #04aa6d;
+    border-radius: 5px;
+}
+
+
+
+
+
 }

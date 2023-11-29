@@ -1,0 +1,129 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    height: 100%;
+    width: 100%;
+    font-size: 1.4rem;
+    text-rendering: optimizeLegibility;
+    text-decoration: none;
+}
+
+html,
+body a {
+    text-decoration: none;
+    color: #000
+}
+
+:root {
+    --lineColor: rgba(219, 219, 172, 0.253);
+}
+
+#container {
+    width: 100%;
+    height: 100vh;
+    background-color: #1f1d1d;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin-bottom: 50px;
+}
+
+.score {
+    width: 400px;
+    height: 50px;
+    border: 1px solid;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    color: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.tiktactobox {
+    width: 400px;
+    height: 300px;
+    box-shadow: rgba(255, 255, 255, 0.1) 0px 0px 8px 0px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    flex-wrap: wrap;
+    padding: 10px;
+    position: relative;
+    border-radius: 5px;
+    border: none;
+    overflow: hidden;
+    margin-top: 40px;
+  
+}
+
+.box {
+    width: 123px;
+    height: 90px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+      transition: all .4s linear;
+}
+
+.line1 {
+    width: 1px;
+    height: 100%;
+    background-color: var(--lineColor);
+    left: 34%;
+    position: absolute;
+}
+
+.line2 {
+    width: 1px;
+    height: 100%;
+    background-color: var(--lineColor);
+    left: 66%;
+    position: absolute;
+}
+
+::selection {
+    display: none;
+}
+
+.line3 {
+    width: 1px;
+    height: 134%;
+    background-color: var(--lineColor);
+    position: absolute;
+    position: absolute;
+    top: -33%;
+    left: 0%;
+    transform: rotateZ(90deg)translate(-50%, -50%);
+    -webkit-transform: rotateZ(90deg)translate(-50%, -50%);
+    -moz-transform: rotateZ(90deg)translate(-50%, -50%);
+    -ms-transform: rotateZ(90deg)translate(-50%, -50%);
+    -o-transform: rotateZ(90deg)translate(-50%, -50%);
+    transform-origin: center;
+}
+
+.line4 {
+    width: 1px;
+    height: 134%;
+
+    background-color: var(--lineColor);
+    position: absolute;
+    position: absolute;
+    top: 0%;
+    left: 0%;
+    transform: rotateZ(90deg)translate(-50%, -50%);
+    -webkit-transform: rotateZ(90deg)translate(-50%, -50%);
+    -moz-transform: rotateZ(90deg)translate(-50%, -50%);
+    -ms-transform: rotateZ(90deg)translate(-50%, -50%);
+    -o-transform: rotateZ(90deg)translate(-50%, -50%);
+    transform-origin: center;
+}
