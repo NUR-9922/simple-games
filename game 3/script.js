@@ -24,7 +24,7 @@ function checkWinner() {
     const [a, b, c] = combo;
  
     console.log(a);
-    if (boxes[3].textContent === arr[0] && boxes[4].textContent === arr[0] && boxes[5].textContent === arr[0]) {
+    if (boxes[a].textContent === arr[0] && boxes[b].textContent === arr[0] && boxes[c].textContent === arr[0]) {
       crose++
       updateScores();
       reset();
