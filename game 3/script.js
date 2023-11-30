@@ -2,16 +2,15 @@
 let audio = new Audio('assits/sounds/inputClickSound.mp3');
 
 
-// let playerOneName = document.getElementById("fPlyer");
-// let playerTowName = document.getElementById("sPlyer");
-// let enterBtn = document.querySelector(".enter");
-// window.onload = () => {
-//   const popupContainer = document.querySelector(".popupContainer");
-//   popupContainer.classList.add("backgroundBlur");
-//   document.querySelector(".askname").style.marginTop = "0px";
+let playerOneName = document.getElementById("fPlyer");
+let playerTowName = document.getElementById("sPlyer");
+let enterBtn = document.querySelector(".enter");
+window.onload = () => {
+  const popupContainer = document.querySelector(".popupContainer");
+  popupContainer.classList.add("backgroundBlur");
+  document.querySelector(".askname").style.marginTop = "0px";
 
-// }
-let enterBtn = document.querySelector(".playBtn")
+}
 enterBtn.onclick = function () {
   // document.querySelector("")
   // console.log();
@@ -217,6 +216,7 @@ function winnerOne() {
 }
 
 function winnerTow() {
+  document.getElementById("b").play();
   winnerDisplay.style.opacity = "1";
   winnerDisplay.style.pointerEvents = "all";
     winnerDisplay.innerHTML = `  <h4>WINNER </h4>
