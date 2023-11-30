@@ -177,11 +177,13 @@ function checkWinner() {
       crose++
       updateScores();
       winnerOne() 
+      winMsg();
       return;
     } else if (boxes[a].textContent === arr[1] && boxes[b].textContent === arr[1] && boxes[c].textContent === arr[1]) {
       zero++;
       updateScores();
       winnerTow();
+      winMsg();
       return;
     }
   }
