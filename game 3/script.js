@@ -131,7 +131,6 @@ startBtn.onclick = function () {
     if (widhtValue == 100) {
       clearInterval(t);
     }
-    console.log('');
     document.querySelector(".loading-line-inner ").style.width = `${widhtValue}%`
   }
 
