@@ -212,7 +212,7 @@ function winnerOne() {
   winnerDisplay.style.opacity = "1";
   winnerDisplay.style.pointerEvents = "all";
     winnerDisplay.innerHTML = ` <h4>WINNER </h4>
-    <img class="winerImgParent " src="/assits/athlete.png" alt="">
+    <img class="winerImgParent " src="../assits/athlete.png" alt="">
   
     <div class="skip">SKIP</div>`
 }
@@ -222,7 +222,7 @@ function winnerTow() {
   winnerDisplay.style.opacity = "1";
   winnerDisplay.style.pointerEvents = "all";
     winnerDisplay.innerHTML = `  <h4>WINNER </h4>
-    <img class="winerImgParent " src="/assits/soccer-player.png" alt="">
+    <img class="winerImgParent " src="../assits/soccer-player.png" alt="">
     <div class="skip">SKIP</div>`;
 }
 
