@@ -175,20 +175,21 @@ function checkWinner() {
     if (boxes[a].textContent === arr[0] && boxes[b].textContent === arr[0] && boxes[c].textContent === arr[0]) {
       crose++
       updateScores();
-      winnerOne() 
-      winMsg();
+      winnerOne();
+      resetCoad()
       return;
     } else if (boxes[a].textContent === arr[1] && boxes[b].textContent === arr[1] && boxes[c].textContent === arr[1]) {
       zero++;
       updateScores();
       winnerTow();
-      winMsg();
+      resetCoad()
       return;
     }
+
   }
 
   if (totalClick === 9) {
-    winMsg();
+    ifNotWinAnyOne();
   }
 }
 
@@ -197,7 +198,10 @@ function updateScores() {
   document.getElementById("zeroValue").innerText = zero;
 }
 
-function winMsg() {
+
+let nowin = document.querySelector(".ifNotWinAnnyOne");
+
+function resetCoad() {
   totalClick = 0;
 
   boxes.forEach((el, i) => {
@@ -205,29 +209,95 @@ function winMsg() {
     el.style.pointerEvents = "all";
   });
 }
+function ifNotWinAnyOne() {
+  nowin.style.opacity = "1";
+  nowin.style.pointerEvents = "all";
+  nowin.innerHTML = `<h4>It's a draw! No winner this time.</h4>`
+  setTimeout(() => {
+    nowin.style.opacity = "0";
+    nowin.style.pointerEvents = "none";
+    nowin.innerHTML = ``
+  }, 2000);
+
+
+  resetCoad();
+}
+
+
+
 const winnerDisplay = document.querySelector(".winerDisplay");
 function winnerOne() {
- document.getElementById("b").play();
+  document.getElementById("b").play();
   winnerDisplay.style.opacity = "1";
   winnerDisplay.style.pointerEvents = "all";
-    winnerDisplay.innerHTML = ` <h4>WINNER </h4>
+  winnerDisplay.innerHTML = ` <h4>WINNER </h4>
     <img class="winerImgParent " src="../assits/athlete.png" alt="">
   
     <div class="skip">SKIP</div>`
+
+
+  gsap.from(".winerDisplay h4, .winerImgParent,.skip", {
+    y: 300,
+    duration: 0.7,
+    stagger: 0.3,
+  });
+
+
 }
 
 function winnerTow() {
   document.getElementById("b").play();
   winnerDisplay.style.opacity = "1";
   winnerDisplay.style.pointerEvents = "all";
-    winnerDisplay.innerHTML = `  <h4>WINNER </h4>
+  winnerDisplay.innerHTML = `  <h4>WINNER </h4>
     <img class="winerImgParent " src="../assits/soccer-player.png" alt="">
     <div class="skip">SKIP</div>`;
+
+  gsap.from(".winerDisplay h4, .winerImgParent,.skip", {
+    y: 300,
+    duration: 0.7,
+    stagger: 0.3,
+  });
+
 }
 
-winnerDisplay.addEventListener('click', function(event) {
+winnerDisplay.addEventListener('click', function (event) {
   if (event.target.classList.contains('skip')) {
     winnerDisplay.style.opacity = "0";
-  winnerDisplay.style.pointerEvents = "none";
-  }
-});
+    winnerDisplay.style.pointerEvents = "none";
+    gsap.from('.line1 ', {
+      left: " -125.6%",
+      opacity: 1,
+      duration: 0.5,
+    });
+
+
+    gsap.from('.line2 ', {
+      left: "104%",
+      opacity: 1,
+      stagger: 0.3,
+      duration: 0.5,
+    });
+    gsap.from('.line3 ', {
+      top: '-83%',
+      opacity: 1,
+      stagger: 0.3,
+      duration: 0.5,
+    });
+    gsap.from('.line4 ', {
+      top: '-101%',
+      opacity: 1,
+      stagger: 0.3,
+      duration: 0.5,
+    });
+  
+
+
+
+
+  }}
+);
+
+
+// after clcik skip animation for lines
+
